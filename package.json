@@ -1,0 +1,56 @@
+{
+  "name": "moten",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "packageManager": "pnpm@7.9.5",
+  "engines": {
+    "pnpm": ">=7",
+    "node": ">=18"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "in": "pnpm i -r",
+    "clear": "rimraf --glob ./node_modules ./packages/**/node_modules ./packages/**/dist",
+    "ui": "pnpm -F @moten/ui dev",
+    "ui:build": "pnpm -F @moten/ui build",
+    "play:vue2": "pnpm -F @moten/ui build:vue2 && pnpm -F @moten/playground-vue2 serve",
+    "play:vue3": "pnpm -F @moten/ui build:vue3 && pnpm -F @moten/playground-vue3 dev",
+    "prepare": "husky",
+    "lint": "node ./scripts/lint.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-vinyl"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "pnpm lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pnpm": {
+    "packageExtensions": {
+      "vue-template-compiler": {
+        "devDependencies": {
+          "vue": "^2.7.16"
+        }
+      },
+      "vue-template-compiler@2.7.16": {
+        "dependencies": {
+          "vue": "^2.7.16"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "cz-vinyl": "^2.5.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "rimraf": "^5.0.7"
+  }
+}
