@@ -18,12 +18,26 @@ export default defineComponent({
 </script>
 
 <template>
-  <img :src="src" alt="">
+  <div>
+    <h1 class="title">123</h1>
+    <img class="image" :src="src" alt="image">
+  </div>
 </template>
 
 <style scoped>
-img {
+.image {
   width: 300px;
-  height: 400px;
+  height: 200px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 50px;
+  color: red;
+}
+@container (max-width: 600px) {
+  .title {
+    font-size: 20px;
+    color: #ffff00;
+  }
 }
 </style>
