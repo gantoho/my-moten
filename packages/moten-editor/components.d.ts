@@ -7,6 +7,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    2: typeof import('./src/components/edit-header copy 2.vue')['default']
+    3: typeof import('./src/components/edit-header copy 3.vue')['default']
+    copy: typeof import('./src/components/edit-header copy.vue')['default']
+    EditBlock: typeof import('./src/components/edit/edit-block.vue')['default']
+    EditConfig: typeof import('./src/components/edit/edit-config.vue')['default']
+    EditHeader: typeof import('./src/components/edit/edit-header.vue')['default']
+    EditRender: typeof import('./src/components/edit/edit-render.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']

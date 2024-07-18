@@ -22,6 +22,28 @@
 }
 
 // @include res(font-size, 12, 20)
-@mixin res() {
-  
+@mixin res($property, $mobile: null, $pc: null) {
+  $pcValue: if(unitless($pc), #{$pc}px, $pc);
+  $mobileValue: if(unitless($mobile), vw($mobile), $mobile);
+  $mobileContainerValue: if(unitless($mobile), #{$mobile}px, $mobile);
+
+  @if(exists($pc)) {
+    @include pc {
+      #{property}: $pcValue;
+      // font-size: 20px;
+    }
+  }
+
+  @if(exists($mobile)) {
+    @include mb-ct {
+      #{property}: $mobileContainerValue;
+      // font-size: 12px;
+    }
+    @include mb {
+      #{property}: $mobileValue;
+      // font-size: 12px;
+    }
+  }
 }
+
+// @include res(font-size, 12, 20);

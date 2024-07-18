@@ -24,7 +24,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .image {
   width: 300px;
   height: 200px;
